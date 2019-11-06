@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
 
     const calculate = (amount) => {
         console.log(`Entered amount = ${amount}`);
-        let notes = [2000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
+        let notes = [50, 20, 10, 1];
 
 
         for(let i=0; i<notes.length; i++) {
@@ -27,15 +27,15 @@ window.addEventListener('load', function() {
     const notesCalc = (note) => {
         if (amount >= note) {
             let notesUsable = Math.trunc(amount / note);
-            let listItem = `${notesUsable} notes of Rs.${note}`;
+            let listItem = `${notesUsable} notes of JD.${note}`;
             let node = document.createElement("LI");
             let textnode = document.createTextNode(listItem);
             let nodeList = document.getElementById('notesList');
             node.appendChild(textnode);
             nodeList.insertBefore(node, nodeList.firstChild);
-            // console.log(`Rs.${note} notes dispensed = ${notesUsable}`);
+            // console.log(`JD.${note} notes dispensed = ${notesUsable}`);
             amount = amount % note;
-            console.log(`Remaining balance out of Rs.${note} = ${amount}`);
+            console.log(`Remaining balance out of JD.${note} = ${amount}`);
             totalNotes += notesUsable;
         }
     }
